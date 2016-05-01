@@ -2,7 +2,7 @@
 
 .container
   - @posts.each do |post|
-    %li= post.title
+    %li= link_to post.title, post
 
 
 -#

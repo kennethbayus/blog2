@@ -1,0 +1,5 @@
+%h2 Update Post
+%br
+= render 'form', button: 'Update Post'
+%br
+= link_to '<button type="button" class="btn btn-danger"> Delete Post</button>'.html_safe, post_path(@post), data: {confirm: 'Are you sure?'}, :method => :delete
