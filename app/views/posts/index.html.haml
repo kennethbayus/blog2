@@ -1,0 +1,24 @@
+%h1 TESTING
+
+.container
+  - @posts.each do |post|
+    %li= post.title
+
+
+-#
+-# <div class='container'>
+-#
+-# 	<% @posts.each_with_index do |post,i| %>
+-# 		<% if i==0 || i%3 ==0 %>
+-# 			<div class = 'row'>
+-# 				<%= render 'post', post:post, i:i%>
+-# 		<%elsif (i+1)%3 == 0 %>
+-# 			<%= render 'post', post:post, i:i%>
+-# 			</div>
+-# 			<hr/>
+-# 		<%else%>
+-# 			<%= render 'post', post:post, i:i %>
+-# 		<%end%>
+-# 	<% end %>
+-#
+-# </div>
