@@ -1,0 +1,10 @@
+.row
+  .col-md-9
+    .well
+      %h1.post-title
+      - if logged_in?
+        =link_to 'Edit Post', edit_post_path(@post)
+      %br
+      =@post.title
+      %hr
+      %p=@post.body
