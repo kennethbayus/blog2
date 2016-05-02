@@ -1,0 +1,11 @@
+%h1 All Categories
+
+%ul.list-group
+  -@categories.each do |c|
+    %li.list-group-item
+      %h4= c.name
+      .btn-group
+      = link_to '<button type="button" class="btn btn-warning"> Edit Category</button>'.html_safe, edit_category_path(c)
+      = link_to '<button type="button" class="btn btn-danger"> Delete Category</button>'.html_safe, category_path(c), data: {confirm: "Are you sure -- This can't be undone"}, :method => :delete
+
+= render 'form', button: 'Create New Category'

@@ -10,4 +10,9 @@
     .form-group
       = f.label :body, 'Post Body', class: 'control-label col-sm-2'
       = f.text_area :body, class: 'new_post_body'
+    .form-group
+      = f.label 'Categories', class: 'control-label col-sm-2'
+      = f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb|
+        = cb.label( class: 'checkbox inline col-sm-2') {cb.check_box(class: 'checkbox') + cb.text}
+
   = f.submit button, class: 'btn btn-primary'
