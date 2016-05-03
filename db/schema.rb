@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501214847) do
+ActiveRecord::Schema.define(version: 20160503015113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20160501214847) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "order"
+    t.integer  "post_id"
+    t.string   "file_path_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_filename"
+    t.string   "file_size"
+    t.string   "file_content_type"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -45,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160501214847) do
     t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo"
   end
 
 end
