@@ -27,7 +27,7 @@ gem 'bootstrap-sass'
 gem 'haml'
 
 gem 'redcarpet'
-gem 'carrierwave'
+gem "carrierwave", :github => "carrierwaveuploader/carrierwave"
 gem 'mini_magick'
 gem 'fog'
 

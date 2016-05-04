@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   def create
     @category=Category.new(category_params)
     @categories = Category.all
-    
+
 		if @category.save
   		flash['success'] = "New Category created successfully"
   		redirect_to new_category_path
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
 	end
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.find_by slug: params[:id]
   end
 
   private

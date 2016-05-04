@@ -49,12 +49,12 @@ class PostsController < ApplicationController
 	end
 
   def set_post
-		@post = Post.find(params[:id])
+		@post = Post.find_by slug: params[:id]
 	end
 
   private
-    def post_params()
-			params.require(:post).permit(:title, :tagline, :body, category_ids: [])
+    def post_params
+			params.require(:post).permit(:title, :tagline, :body, category_ids: [], photos: [])
 		end
 
 end

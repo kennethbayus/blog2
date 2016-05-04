@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def edit
-		@user = User.find(params[:id])
+		@user = User.find_by slug: params[:id]
 	end
 
 	def update
-		@user = User.find(params[:id])
+		@user = User.find_by slug: params[:id]
 
 	 	if @user.update(user_params)
   		flash['success'] = "User was updated successfully"

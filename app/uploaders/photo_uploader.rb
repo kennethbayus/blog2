@@ -11,7 +11,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "uploads2/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads2/#{model.class.to_s.underscore}/#{mounted_as}/#{model.slug}"
   end
 
   process resize_to_limit: [1000,1000]

@@ -8,5 +8,8 @@
       =@post.title
       %hr
       %p=@post.body
-
-      = image_tag(@user.photo.medium.url)
+      -@post.photos.each do |p| # for each image
+        = image_tag(p.medium.url)
+      %br
+      - if !@user.nil?
+        = image_tag(@user.photo.small.url)
